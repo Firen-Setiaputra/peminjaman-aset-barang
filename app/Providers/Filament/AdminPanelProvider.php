@@ -30,6 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->profile()
             ->login()
             ->registration()
+            ->passwordReset()
             ->colors([
                 'primary' => Color::Indigo,
                 'secondary' => Color::Slate, 

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('assets', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_asset');
+            $table->string('kode_asset')->unique();
             $table->string('nama_asset');
             $table->enum('kategori',['elektronik','kendaraan','peralatan', 'lainnya']);
             $table->integer('stock')->default(0);
