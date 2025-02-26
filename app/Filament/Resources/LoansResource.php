@@ -24,7 +24,7 @@ class LoansResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Select::make('anggota_id')
-                ->relationship('anggota','nama_asset')
+                ->relationship('anggota','nama')
                     ->required(),
                 Forms\Components\Select::make('asset_id')
                 ->relationship('asset','nama_asset')

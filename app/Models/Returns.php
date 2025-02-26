@@ -17,4 +17,19 @@ class Returns extends Model
     {
         return $this->belongsTo(loans::class,'loans_id');
     }
+
+    protected static function boot()
+{
+    parent::boot();
+
+    static::created(function ($return) {
+        // Cari peminjaman berdasarkan loans_id yang dikembalikan
+        $loans = \App\Models\loans::find($return->loans_id);
+
+        if ($loans) {
+            $loans->status = 'dikembalikan'; // Ubah status menjadi dikembalikan
+            $loans->save();
+        }
+    });
+}
 }
