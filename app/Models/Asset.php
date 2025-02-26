@@ -14,8 +14,8 @@ class Asset extends Model
         'id','kode_asset','nama_asset','kategori','stock','deskripsi','status'
     ];
 
-    // public function anggota ()
-    // {
-    //     return $this->belongsTo(Anggota::class);
-    // }
+    public function loans ()
+    {
+        return $this->hasMany(loans::class,'loans_id');
+    }
 }

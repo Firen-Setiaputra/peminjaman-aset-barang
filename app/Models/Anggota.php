@@ -13,4 +13,10 @@ class Anggota extends Model
     protected $fillable = [
         'id','nama','email','alamat','telepon'
     ];
+
+    
+    public function loans ()
+    {
+        return $this->hasMany(loans::class,'loans_id');
+    }
 }

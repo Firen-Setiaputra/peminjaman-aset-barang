@@ -24,8 +24,9 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.com',
             'password' => '123',
         ]);
-        
+
         \App\Models\Anggota::factory()->count(5)->create();
+        \App\Models\Asset::factory()->count(5)->create();
     }
 
 }
